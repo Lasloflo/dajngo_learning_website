@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% for n in news %}
+    <h1>{{ n.title }}</h1><br> <!выводим имя новости>
+    <a href="{% url 'news-detail' n.id %}">Читать новость</a> <!-- href ссылка на новость. Обращаемся по имени иказаном в -->
+    {% endfor %}
+</body>
+</html>

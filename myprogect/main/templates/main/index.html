@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Главная страница</h1>
+
+    {% for feedback in feedbacks %} <!-- цикл для отображения на странице из переменной в файле views -->
+    <h2>{{ feedback.message }}</h2><br>
+    {{ feedback.name }}<br><br>
+    {% endfor %}
+    <form method="post">
+        {% csrf_token %}
+        {{ form.name }}<br>
+        {{ form.email }}<br>
+        {{ form.city }}<br>
+        {{ form.message }}<br>
+        <button type="submit" name="button">Отправить</button>
+    </form>
+</body>
+</html>
